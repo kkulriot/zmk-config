@@ -20,4 +20,6 @@
 ---
 include:
   - board: nice_nano
-    shield: contra
+    shield: YOUR_SHIELD
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y

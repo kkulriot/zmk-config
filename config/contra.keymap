@@ -12,10 +12,15 @@
 #define NUM_MODS 1
 #define BT_CTRL  2
 
+&vbatt { status = "disabled"; };
+
 / {
-    // Tells ZMK to use the nice!nano's pre-configured battery sensor
+    vbatt_vddh: vbatt_vddh {
+        compatible = "zmk,battery-nrf-vddh";
+    };
+
     chosen {
-        zmk,battery = &vbatt;
+        zmk,battery = &vbatt_vddh;
     };
 
     keymap {

@@ -13,19 +13,10 @@
 #define BT_CTRL  2
 
 / {
-    // === ADDED FOR NICE!NANO BATTERY REPORTING ===
+    // Tells ZMK to use the nice!nano's pre-configured battery sensor
     chosen {
         zmk,battery = &vbatt;
     };
-
-    vbatt: battery {
-        compatible = "zmk,battery-voltage-divider";
-        label = "BATTERY";
-        io-channels = <&adc 0>;
-        output-ohms = <2000000>;
-        full-ohms = <2820000>;
-    };
-    // =============================================
 
     keymap {
         compatible = "zmk,keymap";

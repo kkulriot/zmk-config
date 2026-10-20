@@ -13,6 +13,20 @@
 #define BT_CTRL  2
 
 / {
+    // === ADDED FOR NICE!NANO BATTERY REPORTING ===
+    chosen {
+        zmk,battery = &vbatt;
+    };
+
+    vbatt: battery {
+        compatible = "zmk,battery-voltage-divider";
+        label = "BATTERY";
+        io-channels = <&adc 0>;
+        output-ohms = <2000000>;
+        full-ohms = <2820000>;
+    };
+    // =============================================
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -21,7 +35,7 @@
     &kp ESC   &kp Q     &kp W    &kp E     &kp R       &kp T      &kp Y     &kp U        &kp I     &kp O     &kp P    &kp BSPC
     &kp TAB   &kp A     &kp S    &kp D     &kp F       &kp G      &kp H     &kp J        &kp K     &kp L     &kp SEMI &kp SQT
     &kp LSHFT &kp Z     &kp X    &kp C     &kp V       &kp B      &kp N     &kp M        &kp COMMA &kp DOT   &kp FSLH &kp ENTER
-    &kp LCTRL &kp LGUI  &kp LALT &kp BSLH  &to DEFAULT &kp SPACE  &trans    &to NUM_MODS &kp LEFT  &kp RIGHT &kp UP   &kp DOWN
+    &kp LCTRL &kp LGUI  &kp LALT &kp BSLH  &mo NUM_MODS &kp SPACE  &trans    &to NUM_MODS &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT
             >;
         };
 
@@ -30,7 +44,7 @@
     &kp GRAVE &kp N1    &kp N2   &kp N3   &kp N4      &kp N5     &kp N6    &kp N7      &kp N8    &kp N9    &kp N0   &kp DEL
     &kp TAB   &kp F1    &kp F2   &kp F3   &kp F4      &kp F5     &kp F6    &kp MINUS   &kp PG_UP &kp LBKT  &kp RBKT &kp BSLH
     &kp LSHFT &kp F7    &kp F8   &kp F9   &kp F10     &kp F11    &kp F12   &kp EQUAL   &kp PG_DN &kp HOME  &kp END  &kp ENTER
-    &kp LCTRL &kp LGUI  &kp LALT &sys_reset   &to DEFAULT &kp SPACE  &trans    &mo BT_CTRL &kp LEFT  &kp RIGHT &kp UP   &kp DOWN
+    &kp LCTRL &kp LGUI  &kp LALT &sys_reset   &trans &kp SPACE  &trans    &mo BT_CTRL &kp LEFT  &kp DOWN &kp UP   &kp RIGHT
             >;
         };
 

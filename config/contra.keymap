@@ -22,7 +22,7 @@
     chosen {
         zmk,battery = &vbatt_vddh;
     };
-
+    
     keymap {
         compatible = "zmk,keymap";
 
@@ -38,8 +38,8 @@
         num_mods {
             bindings = <
     &kp GRAVE &kp N1    &kp N2   &kp N3   &kp N4      &kp N5     &kp N6    &kp N7      &kp N8    &kp N9    &kp N0   &kp DEL
-    &kp TAB   &kp F1    &kp F2   &kp F3   &kp F4      &kp F5     &kp F6    &kp MINUS   &kp PG_UP &kp LBKT  &kp RBKT &kp BSLH
-    &kp LSHFT &kp F7    &kp F8   &kp F9   &kp F10     &kp F11    &kp F12   &kp EQUAL   &kp PG_DN &kp HOME  &kp END  &kp ENTER
+    &kp TAB   &kp F1    &kp F2   &kp F3   &kp F4      &kp F5     &kp F6    &trans   &trans &kp LBKT  &kp RBKT &kp BSLH
+    &kp LSHFT &kp F7    &kp F8   &kp F9   &kp F10     &kp F11    &kp F12   &trans   &trans &kp MINUS  &kp EQUAL  &kp ENTER
     &kp LCTRL &kp LGUI  &kp LALT &sys_reset   &trans &kp SPACE  &trans    &mo BT_CTRL &kp LEFT  &kp DOWN &kp UP   &kp RIGHT
             >;
         };
